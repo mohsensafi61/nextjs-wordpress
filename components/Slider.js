@@ -8,6 +8,7 @@ const Slider = () => {
       <Carousel>
         {imageUrls.map((url) => (
           <img
+            key="url"
             className="object-cover object-center"
             src={`/images/${url}.jpg`}
             alt="..."
