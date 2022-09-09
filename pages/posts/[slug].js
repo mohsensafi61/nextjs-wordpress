@@ -20,11 +20,15 @@ export default function Post({ post }) {
           prose-p:text-base prose-p:leading-8 md:prose-p:text-ls md:prose-p:leading-10
           prose-img:rounded-xl prose-img:mx-auto prose-a:text-blue-500 prose-a:no-underline mb-8 max-w-screen-md mx-auto"
       >
-        <div className="aspect-w-16 aspect-h-9 rounded-lg w-full h-96 object-center object-cover">
-          <img
-            src={post.featuredImage.node.sourceUrl}
+        <div className="aspect-w-16 aspect-h-9 mt-40 rounded-lg w-full h-96 object-center object-cover">
+          <Image
+            placeholder="blur"
+            blurDataURL={post.featuredImage?.node?.sourceUrl}
+            src={post.featuredImage?.node?.sourceUrl}
             alt={post.title}
             className="w-full h-full"
+            loading="lazy"
+            layout="fill"
           />
         </div>
         <h1 className="text-center bg-gray-200 p-10 mt-16 rounded-lg">

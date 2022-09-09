@@ -3,11 +3,11 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header
-      className="fixed bg-blue-100/70 dark:bg-black/60 dark:text-blue-100 z-10 backdrop-blur-lg top-0
-                w-full shadow-lg py-2"
+      className="fixed bg-gray-100/40 dark:bg-black/60 dark:text-blue-100 z-10 backdrop-blur-lg top-0
+                w-full shadow-lg shadow-gray-700/60 py-2"
     >
       <nav className="container mx-auto xl:max-w-screen-xl px-4 transition-all flex justify-between">
-        <ul className="flex items-center gap-x-7 px-7 py-6 text-xl">
+        <ul className="flex items-center gap-x-7 px-7 py-6 text-xl text-gray-900">
           <li className="hover:-translate-y-2 hover:text-green-900 hover:scale-150 transition-all duration-600">
             <Link href="/">
               <a className="py-2 block">خانه</a>
