@@ -15,7 +15,7 @@ const PostList = ({ posts }) => {
                 loading="lazy"
                 src={post.featuredImage?.node?.sourceUrl}
                 alt={post.title}
-                className="h-full w-full rounded-lg object-cover object-center"
+                className="rounded-lg object-cover object-center"
               />
             </div>
             <h1 className="my-6 text-center text-2xl font-bold text-blue-900">
