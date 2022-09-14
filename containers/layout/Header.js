@@ -1,39 +1,84 @@
 import Link from "next/link";
+import { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 
 const Header = () => {
+  const [nav, setNav] = useState(true);
+
+  const handleNav = () => {
+    setNav(!nav);
+  };
   return (
-    <header
-      className="fixed bg-gray-100/40 dark:bg-black/60 dark:text-blue-100 z-10 backdrop-blur-lg top-0
-                w-full shadow-lg shadow-gray-700/60 py-2"
+    <div
+      className="sticky top-0 z-10 h-0 mx-auto md:h-24 w-full bg-gradient-to-r from-[#002e69]/90 to-[#0059db]/90 
+                 px-4 shadow-md shadow-gray-500/60 transition-all"
     >
-      <nav className="container mx-auto xl:max-w-screen-xl px-4 transition-all flex justify-between">
-        <ul className="flex items-center gap-x-7 px-7 py-6 text-xl text-gray-900">
-          <li className="hover:-translate-y-2 hover:text-green-900 hover:scale-150 transition-all duration-600">
+      {/* Desktop NavBar */}
+      <div className="hidden w-full h-full items-center justify-between backdrop-blur-xl md:flex">
+        <ul className="flex items-center gap-x-7 px-7 py-6 text-xl text-gray-200">
+          <li className="duration-600 transition-all hover:-translate-y-2 hover:scale-150">
             <Link href="/">
-              <a className="py-2 block">خانه</a>
+              <a className="block py-2">خانه</a>
             </Link>
           </li>
-          <li className="hover:-translate-y-2 hover:text-green-900 hover:scale-150 transition-all duration-600">
+          <li className="duration-600 transition-all hover:-translate-y-2 hover:scale-150">
             <Link href="/blogs">
-              <a className="py-2 block">بلاگ ها</a>
+              <a className="block py-2">بلاگ ها</a>
             </Link>
           </li>
-          <li className="hover:-translate-y-2 hover:text-green-900 hover:scale-150 transition-all duration-600">
+          <li className="duration-600 transition-all hover:-translate-y-2 hover:scale-150">
             <Link href="/services">
-              <a className="py-2 block">خدمات</a>
+              <a className="block py-2">خدمات</a>
             </Link>
           </li>
-          <li className="hover:-translate-y-2 hover:text-green-900 hover:scale-150 transition-all duration-600">
+          <li className="duration-600 transition-all hover:-translate-y-2 hover:scale-150">
             <Link href="/about">
-              <a className="py-2 block">درباره ما</a>
+              <a className="block py-2">درباره ما</a>
             </Link>
           </li>
         </ul>
-        <div className="flex items-center gap-x-4"></div>
 
-        <img src="/images/emam.jpg" className="rounded-full w-20 h-20" />
-      </nav>
-    </header>
+        <img src="/images/emam.jpg" className="h-20 w-20 rounded-full" />
+      </div>
+
+      {/* Mobile NavBar */}
+      <div className="mt-5 mr-5 flex md:hidden">
+        <div onClick={handleNav} className="z-30 rounded-lg right-3 top-3 fixed bg-blue-900 p-3">
+          {!nav ? <AiOutlineClose color="white" size={30} /> : <AiOutlineMenu color="white" size={30} />}
+        </div>
+
+        <div
+          className={
+            !nav
+              ? "fixed left-0 top-0 z-20 w-[70%] duration-500 ease-in-out"
+              : "fixed left-[-100%] top-0 duration-300 ease-in-out"
+          }
+        >
+          <ul className="h-screen flex-col bg-gradient-to-r from-[#002e69]/90 to-[#0059db]/90 backdrop-blur-xl px-7 py-6 text-2xl text-white">
+            <li className="">
+              <Link href="/">
+                <a className="block py-5">خانه</a>
+              </Link>
+            </li>
+            <li className="">
+              <Link href="/blogs">
+                <a className="block py-5">بلاگ ها</a>
+              </Link>
+            </li>
+            <li className="">
+              <Link href="/services">
+                <a className="block py-5">خدمات</a>
+              </Link>
+            </li>
+            <li className="">
+              <Link href="/about">
+                <a className="block py-5">درباره ما</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 

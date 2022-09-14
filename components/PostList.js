@@ -6,7 +6,7 @@ const PostList = ({ posts }) => {
     return (
       <Link key={index} href={`/posts/${post.slug}`}>
         <a>
-          <div className="hover:scale-110 transition-all duration-300 hover:bg-gray-100 rounded-lg">
+          <div className="rounded-lg transition-all duration-300 hover:scale-110 hover:shadow-lg">
             <div className="aspect-w-16 aspect-h-9">
               <Image
                 layout="fill"
@@ -15,10 +15,10 @@ const PostList = ({ posts }) => {
                 loading="lazy"
                 src={post.featuredImage?.node?.sourceUrl}
                 alt={post.title}
-                className="rounded-lg w-full h-full object-center object-cover"
+                className="h-full w-full rounded-lg object-cover object-center"
               />
             </div>
-            <h1 className="text-2xl font-bold text-blue-900 my-6 text-center">
+            <h1 className="my-6 text-center text-2xl font-bold text-blue-900">
               {post.title}
             </h1>
             <div

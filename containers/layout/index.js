@@ -1,15 +1,15 @@
 import Footer from "./Footer";
 import Header from "./Header";
-import NewHeader from "./NewHeader";
 
-const Layout = ({children}) => {
-  return ( 
-    <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+
+const Layout = ({ children }) => {
+  return (
+    <div>
       <Header />
         {children}
-      <Footer/>
+      <Footer />
     </div>
-   );
-}
- 
+  );
+};
+
 export default Layout;
